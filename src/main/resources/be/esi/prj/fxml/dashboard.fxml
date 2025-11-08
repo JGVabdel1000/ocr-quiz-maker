@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="900.0" prefWidth="1200.0" stylesheets="@../styles/Dashboard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="be.esi.prj.viewmodel.DashboardViewModel">
+    <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true" BorderPane.alignment="CENTER">
+            <content>
+                <FlowPane fx:id="flowPane" styleClass="flow-pane" vgap="10.0">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </FlowPane>
+            </content>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#createFolder" text="New Folder" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+        </ScrollPane>
+    </center>
+    <bottom>
+        <HBox alignment="BOTTOM_RIGHT" styleClass="footerHbox" BorderPane.alignment="CENTER">
+            <children>
+            <Button mnemonicParsing="false" onAction="#handleUploadImages" styleClass="createQuizBtn" text="create new quiz" />
+            </children>
+        </HBox>
+    </bottom>
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="headerHbox" BorderPane.alignment="CENTER">
+         <children>
+             <VBox fx:id="createNewFolder" alignment="CENTER" onMouseClicked="#createFolder" styleClass="newFolderBtn">
+                 <children>
+                     <ImageView fitWidth="20" pickOnBounds="true" preserveRatio="true" styleClass="newFolderBtnImg">
+                         <image>
+                             <Image url="@../images/new-folder-icon.png" />
+                         </image>
+                         <cursor>
+                             <Cursor fx:constant="HAND" />
+                         </cursor>
+                     </ImageView>
+                     <Label styleClass="newFolderBtnLabel" text="New Folder" />
+                 </children>
+             </VBox>
+            <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+              <MenuBar styleClass="topMenuBar">
+                  <menus>
+                      <!-- User menu -->
+                      <Menu fx:id="userMenu" mnemonicParsing="false" text="User">
+                          <graphic>
+                              <ImageView fitHeight="16" fitWidth="16" preserveRatio="true">
+                                  <image>
+                                      <Image url="@../images/settings-icon.png" />
+                                  </image>
+                              </ImageView>
+                          </graphic>
+                          <items>
+                              <MenuItem onAction="#handleLogout" styleClass="menu-item" text="Logout" />
+                          </items>
+                      </Menu>
+                  </menus>
+               <opaqueInsets>
+                  <Insets top="11.0" />
+               </opaqueInsets>
+              </MenuBar>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox fx:id="sidebarInfoBox" alignment="CENTER" prefHeight="586.0" prefWidth="190.0" styleClass="sidebar-info-pane" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea cacheShape="false" centerShape="false" editable="false" focusTraversable="false" mouseTransparent="true" opacity="0.5" prefHeight="200.0" prefWidth="200.0" styleClass="sidebar-default-text" text="Click on a folder do display its stats&#10;" wrapText="true">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </TextArea>
+         </children></VBox>
+   </left>
+</BorderPane>

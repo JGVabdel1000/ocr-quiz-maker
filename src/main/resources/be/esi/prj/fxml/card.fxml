@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" prefHeight="600.0" spacing="20" styleClass="quiz-container" stylesheets="@../styles/Card.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="be.esi.prj.viewmodel.QuizSessionViewModel">
+
+    <StackPane alignment="TOP_CENTER" styleClass="card-container" VBox.vgrow="ALWAYS">
+        <VBox alignment="TOP_CENTER" fillWidth="false" styleClass="card">
+            <Label fx:id="questionLabel" styleClass="question-label" text="question" wrapText="true" VBox.vgrow="ALWAYS" />
+             <ScrollPane fx:id="answerContainer" fitToWidth="true" hbarPolicy="NEVER" prefHeight="150.0" vbarPolicy="AS_NEEDED" VBox.vgrow="SOMETIMES">
+                 <Label fx:id="answerLabel" styleClass="answer-label" text="answer" wrapText="true" />
+             </ScrollPane>
+        </VBox>
+    </StackPane>
+   <Region VBox.vgrow="ALWAYS" />
+
+    <VBox alignment="CENTER" spacing="15">
+        <Button fx:id="showAnswerButton" onAction="#onShowAnswerClicked" styleClass="show-button" text="Show Answer" />
+      <VBox fx:id="difficultyButtons">
+         <children>
+            <HBox alignment="CENTER" spacing="15.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Today" />
+                        <Button fx:id="againButton1" mnemonicParsing="false" onAction="#onAgainClicked" styleClass="difficulty-button, again-button" text="Again" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="hardRemainingDays" text="4d" />
+                        <Button fx:id="hardButton1" onAction="#onHardClicked" styleClass="difficulty-button, hard-button" text="Hard" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="goodRemainingDays" text="2d" />
+                        <Button fx:id="mediumButton1" onAction="#onGoodClicked" styleClass="difficulty-button, good-button" text="Good" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="easyRemainingDays" text="1d" />
+                        <Button fx:id="easyButton" onAction="#onEasyClicked" styleClass="difficulty-button, easy-button" text="Easy" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+
+        <Button fx:id="nextButton" onAction="#onNextClicked" styleClass="next-button" text="Next" />
+    </VBox>
+</VBox>

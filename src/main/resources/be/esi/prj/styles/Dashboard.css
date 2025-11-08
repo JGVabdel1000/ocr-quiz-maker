@@ -1,0 +1,165 @@
+/*header section*/
+.headerHbox {
+    -fx-pref-height: 50;
+    -fx-background-color: darkgray;
+}
+
+/*folder button*/
+.newFolderBtn {
+    -fx-fit-width: 20;
+    -fx-padding: 0 10 0 10;
+    -fx-cursor: hand;
+}
+.newFolderBtn:hover {
+    -fx-text-fill: white;
+    -fx-background-color: #147ae0;
+}
+
+.newFolderBtnLabel {
+    -fx-font-size: 10px;
+    -fx-text-fill: black;
+}
+
+.newFolderBtnImg {
+    -fx-fit-width: 20;
+}
+.newFolderBtn:hover .newFolderBtnLabel {
+    -fx-text-fill: white;
+}
+/*folder button ends here*/
+
+/* Menu Bar Container */
+.topMenuBar {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 0;
+    -fx-pref-height: infinity;
+    -fx-alignment: center;
+}
+
+/*!* Individual Menus *!*/
+.menu {
+    -fx-font-size: 14px;
+    -fx-padding: 8 12;
+    -fx-text-fill: black;
+    -fx-cursor: hand;
+}
+
+/*.menu-item {*/
+/*    -fx-background-color: white;*/
+/*    -fx-text-fill: black;*/
+/*}*/
+
+/*.menu-item:hover {*/
+/*    -fx-background-color: #147ae0;*/
+/*    -fx-text-fill: black;*/
+/*}*/
+
+/*menu bar ends here*/
+
+/*header section ends here*/
+
+/*side bar starts from here*/
+.sidebar-info-pane {
+    -fx-background-color: lightgray;
+}
+
+.sidebar-default-text {
+    -fx-background-color: transparent;
+    -fx-control-inner-background: lightgray;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+}
+
+.total-cards-label {
+    -fx-font-size: 25px;
+    -fx-pref-height: 40px;
+}
+
+.again-label {
+    -fx-background-color: #dc4ddc;
+}
+
+.hard-label {
+    -fx-background-color: #e87979;
+}
+
+.good-label {
+    -fx-background-color: #d9d976;
+}
+.easy-label {
+    -fx-background-color: lightgreen;
+}
+
+.sidebar-labels {
+    -fx-font-size: 20px;
+    -fx-pref-width: infinity;
+    -fx-pref-height: 60px;
+    -fx-alignment: center;
+}
+/*side bar ends here*/
+
+/* Style for the folder container (VBox) */
+.folderContainer {
+    -fx-background-color: transparent;
+    -fx-background-radius: 5px;
+    -fx-transition: all 0.5s ease;
+    -fx-alignment: center;
+    -fx-spacing: 5px;
+    -fx-padding: 8px 15px;
+    -fx-cursor: hand;
+}
+
+/* Hover effect for folder container */
+.folderContainer:hover {
+    -fx-background-color: #e3e3e3;
+    -fx-background-radius: 5px;
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 3, 0, 0, 1);
+}
+
+/* Style for the folder name label */
+.folderName {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+
+.flow-pane {
+    -fx-background-color: white;
+}
+
+
+/*footer starts here*/
+
+.footerHbox {
+    -fx-padding: 10 20 10 20;
+    -fx-background-color: darkgray;
+}
+
+
+.createQuizBtn {
+    -fx-background-color: linear-gradient(to bottom, #347ae1, #2059c0);
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-background-radius: 12;
+    -fx-border-radius: 10;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 6, 0, 0, 3);
+    -fx-transition: all 0.2s ease;
+}
+
+.createQuizBtn:hover {
+    -fx-background-color: #0f5fb3;
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+/*footer ends here*/
+.info-pane {
+    -fx-background-color: white;
+}
